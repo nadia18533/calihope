@@ -1,0 +1,109 @@
+<!DOCTYPE html> 
+<html lang="en>">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width,init">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Races</title>
+        <style>
+            .road{
+                         margin-top: 300px;
+                  position: relative;
+                       text-align: center;
+                  display: inline-block;
+  }
+            .car1{
+                margin-top: -290px;
+                text-align: left;
+                 position: absolute;
+                 display: block;
+
+  }  #C1 {
+      position: relative;
+      cursor: pointer;
+    }
+            .car2{
+                 margin-top: -100px;
+                text-align: left;
+                 position: absolute;
+                 display: block;
+
+            }
+             #C2 {
+      position: relative;
+      cursor: pointer;
+    }
+        </style>
+
+           <script>
+               
+        </script>
+            
+        </head>
+        <body>
+          <div id ="score-div">
+              <span>score:</span>
+              <span id="score">0</span>
+          </div>
+                                       <div class="bet">
+                                 Current ballance: <span id ="userBalance">1000$</span>
+                                 <input type ="number" id="userBet">
+                                 <select id = "carBet">
+                                     <option value="1">Car 1</option>
+                                     <option value="2">Car 2</option>
+                                 </select>
+                                 <table border="1">
+                                     <thead>
+                                         <tr><th colspan="2">Winning counter</th></tr>
+                                         <tr>
+                                             <th>Car 1</th>
+                                             <th>Car 2</th>
+                                         </tr>
+                                     </thead>
+                                     <tbody>
+                                         <tr>
+                                             <td><span id="car1Winner"></span></td>
+                                             <td><span id="car2Winner"></span></td>
+                                         </tr>
+                                     </tbody>
+                                 </table>
+                                 <br>
+                             </div>
+          <div id="restart-div">
+            <p> <button onclick = "run()">click to restart</button></p> 
+          </div>
+          <div class="road">
+           <img id = "Rd" src = "road.jpg" width="1903" height="300"> </div>
+                <div class="car1">
+                    <img id = "C1" src="car1.png" width="200" height="100"></div>
+                     <div class="car2">
+                             <img id = "C2" src="car2.png" width="190" height="50"></div>
+                    <script>
+function run() {
+  var elem = document.getElementById("C1"); 
+  var elem2 = document.getElementById("C2");
+  var pos = 0;
+  var id = setInterval(frame, 20);
+  function frame() {
+    if (pos == 1700) {
+      clearInterval(id);
+    } else {
+      pos++; 
+      elem.style.top = 0 + "px"; 
+      elem.style.left = pos + "px";
+      elem2.style.top = 0 + "px"; 
+      elem2.style.left = pos + "px"; 
+    }
+  }
+ 
+}
+</script>
+                     
+                        
+
+
+           
+         
+    <script src="races.js"></script>
+        </body>
+    </html>
